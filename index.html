@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+	<title> SnapShot Capture </title>
+	<script src= "jquery-2.1.3.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('#btnSnap').on('click', function(){
+				var canvas, video, vtx;
+				video = document.getElementById('video');
+				canvas = document.getElementById('myCanvas');
+				vtx = canvas.getContext('2d');
+				vtx.drawImage(video, 0, 0, 450, 250);
+			})
+		});
+	</script>
+</head>
+<body> 
+	<div> 
+		<video id= "video" width= "720px" controls autoplay loop > 
+			<source src= "99.mp4" type= "video/mp4" />
+		</video>
+	</div>
+	<div> 
+		<button id= "btnSnap">Snapshot</button>
+	</div>
+	<canvas id= "myCanvas" width= "1080px" height= "720px">
+ 
+	</canvas>
+</body>
+</html>
